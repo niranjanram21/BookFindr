@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { selectAllBooks, selectBooksStatus, selectBooksError } from '../store/bookSlice';
 
-const SearchResults = () => {
+const FilteredSearchResults = () => {
     const [visibleCount, setVisibleCount] = useState(5); // Initially display 5 books
     const books = useSelector(selectAllBooks);
     const status = useSelector(selectBooksStatus);
@@ -55,4 +55,4 @@ const SearchResults = () => {
     );
 };
 
-export default SearchResults;
+export default FilteredSearchResults;

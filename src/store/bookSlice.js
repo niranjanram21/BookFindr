@@ -7,9 +7,24 @@ const initialState = {
   error: null,
 };
 
-const fetchBooks = createAsyncThunk("books/fetchBooks", async (searchQuery) => {
+// Enhanced fetchBooks function to handle different categories
+const fetchBooks = createAsyncThunk("books/fetchBooks", async ({ searchQuery, category }) => {
+  let queryParam = searchQuery;
+  
+  if (category === "author") {
+    queryParam = `inauthor:${searchQuery}`;
+  } else if (category === "title") {
+    queryParam = `intitle:${searchQuery}`;
+  } else if (category === "subject") {
+    queryParam = `subject:${searchQuery}`;
+  } else if (category === "publisher") {
+    queryParam = `inpublisher:${searchQuery}`;
+  } else if (category === "isbn") {
+    queryParam = `isbn:${searchQuery}`;
+  }
+
   const response = await axios.get(
-    `https://www.googleapis.com/books/v1/volumes?q=${searchQuery}&maxResults=10&key=AIzaSyAJ4gSr-RRpO-VXKbUA3SmenWJa-fYHIz8`
+    `https://www.googleapis.com/books/v1/volumes?q=${queryParam}&maxResults=20&key=AIzaSyAJ4gSr-RRpO-VXKbUA3SmenWJa-fYHIz8`
   );
   return response.data.items;
 });
