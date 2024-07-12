@@ -24,7 +24,7 @@ const fetchBooks = createAsyncThunk("books/fetchBooks", async ({ searchQuery, ca
   }
 
   const response = await axios.get(
-    `https://www.googleapis.com/books/v1/volumes?q=${queryParam}&maxResults=20&key=AIzaSyAJ4gSr-RRpO-VXKbUA3SmenWJa-fYHIz8`
+    `https://www.googleapis.com/books/v1/volumes?q=${queryParam}&maxResults=36&key=AIzaSyAJ4gSr-RRpO-VXKbUA3SmenWJa-fYHIz8`
   );
   return response.data.items;
 });
