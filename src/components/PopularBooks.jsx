@@ -5,7 +5,7 @@ import { IoIosArrowDropdownCircle } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 import Shimmer from './Shimmer';
 
-const PopularBooks = () => {
+const PopularBooks = (props) => {
     const [visibleCount, setVisibleCount] = useState(6);
 
     const dispatch = useDispatch();
@@ -28,7 +28,7 @@ const PopularBooks = () => {
             <span
                 className="text-gray-700  text-lg lg:text-xl font-bold my-2  flex flex-row gap-1 cursor-pointer"
             >
-                <span>Popular Books</span>
+                <span>{props.title}</span>
                 <IoIosArrowDropdownCircle className="relative top-1 transform transition-transform" />
             </span>
             <div className="my-8">

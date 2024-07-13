@@ -7,7 +7,7 @@ import PopularBooks from '../components/PopularBooks';
 import Authors from '../components/Author/Authors';
 import About from './About';
 
-const Home = () => {
+const Home = (title) => {
     return (
         <div className='px-4 py-2 lg:px-20 lg:py-4'>
             <section id="heroSection">
@@ -23,7 +23,7 @@ const Home = () => {
                 <FilteredSearchResults />
             </section>
             <section id="popularBooksSection">
-                <PopularBooks />
+                <PopularBooks title="Popular Books"/>
             </section>
             <section id="authorsSection">
                 <Authors />
