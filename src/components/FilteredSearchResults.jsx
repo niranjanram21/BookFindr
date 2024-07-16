@@ -29,7 +29,7 @@ const FilteredSearchResults = () => {
                     <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6">
                         {books.slice(0, visibleCount).map((book) => (
                             <Link to={`/book/${book.id}`} key={book.id}>
-                                <div className="bg-white p-2 lg:p-4 md:p-2  rounded shadow hover:cursor-pointer hover:scale-105 hover:bg-gradient-to-r from-red-100 to-blue-100 bg-opacity-20 hover:shadow-gray-600 hover:shadow-lg transition duration-200 ease-in-out h-80">
+                                <div className="bg-white p-2 lg:p-4 md:p-2 rounded shadow hover:cursor-pointer hover:scale-105 hover:bg-gradient-to-r from-red-100 to-blue-100 bg-opacity-20 hover:shadow-gray-600 hover:shadow-lg transition duration-200 ease-in-out h-80">
                                     <div className="relative h-48 lg:h-60 flex items-center justify-center overflow-hidden">
                                         <img
                                             src={book.volumeInfo.imageLinks?.thumbnail}

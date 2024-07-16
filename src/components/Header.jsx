@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link, Link as RouterLink } from 'react-router-dom';
 import { Link as ScrollLink } from 'react-scroll';
+import { FaUser } from "react-icons/fa";
+import { FaShoppingCart } from "react-icons/fa";
 
 const Header = () => {
     const [active, setActive] = useState('Home');
@@ -50,11 +52,9 @@ const Header = () => {
                         About
                     </ScrollLink>
                 </nav>
-                <button className="inline-flex items-center bg-transparent border border-blue-600 py-1 px-6 font-bold focus:outline-none hover:bg-blue-200 rounded-none text-base mt-2 md:mt-0">
-                    Login
-                    <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
-                        <path d="M5 12h14M12 5l7 7-7 7"></path>
-                    </svg>
+                <button className="inline-flex gap-4 text-blue-800 opacity-80 items-center bg-transparent border py-1 px-6 font-bold focus:outline-none text-lg lg:text-xl mt-2 md:mt-0">
+                    <FaUser className='hover:text-blue-600 relative z-10 hover:text-2xl'/>
+                    <Link to='/cart' ><FaShoppingCart /></Link>
                 </button>
             </div>
         </header>
