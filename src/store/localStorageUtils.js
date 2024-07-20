@@ -1,7 +1,7 @@
-// localStorageUtils.js
-export const loadState = () => {
+// utils/localStorageUtils.js
+export const loadState = (userId) => {
   try {
-    const serializedState = localStorage.getItem("state");
+    const serializedState = localStorage.getItem(`state_${userId}`);
     if (serializedState === null) {
       return undefined;
     }
@@ -12,10 +12,10 @@ export const loadState = () => {
   }
 };
 
-export const saveState = (state) => {
+export const saveState = (state, userId) => {
   try {
     const serializedState = JSON.stringify(state);
-    localStorage.setItem("state", serializedState);
+    localStorage.setItem(`state_${userId}`, serializedState);
   } catch (err) {
     console.error("Could not save state", err);
   }
